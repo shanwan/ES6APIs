@@ -98,213 +98,230 @@ Examples:
         Computes the square root of the sum of squares of its arguments.
 
 
-  ## Notable String and Array APIs in ES6
+## Notable String and Array APIs in ES6
 
-  ### 1) New String APIs - String.prototype.startsWith(), String.prototype.endsWith(), String.prototype.includes()
+### 1) New String APIs - String.prototype.startsWith(), String.prototype.endsWith(), String.prototype.includes()
 
-  Three new methods check whether a string exists within another string.
+Three new methods check whether a string exists within another string.
 
-  **How do we use it?**
-  `````
-  'hello'.startsWith('hell')
-  //true
-  'hello'.endsWith('ello')
-  //true
-  'hello'.includes('ell')
-  //true
-  `````
-  Each of these methods has a position as an optional second parameter, which specifies where the string to be searched starts or ends:
-  ```
-  'hello'.startsWith('ello', 1)
-  //true
-  'hello'.endsWith('hell', 4)
-  //true
-  'hello'.includes('ell', 1)
-  //true
-  'hello'.includes('ell', 2)
-  //false
-  ```
-  **What problem does it solve?**
+**How do we use it?**
 
-  Useful when looking for words or expressions.
+`````
+'hello'.startsWith('hell')
+//true
+'hello'.endsWith('ello')
+//true
+'hello'.includes('ell')
+//true
+`````
 
-  ES5:
-  ```
-  'hello'.indexOf('ello') === 1;
-  //true
-  'hello'.indexOf('hell') === (4 - 'hell'.length);
-  //true
-  'hello'.indexOf('ell') !== -1;
-  //true
-  'hello'.indexOf('ell', 1) !== -1;
-  //true
-  'hello'.indexOf('ell', 2) !== -1;
-  //false
-  ```
+Each of these methods has a position as an optional second parameter, which specifies where the string to be searched starts or ends:
 
-  ### 2) New String API: String.prototype.repeat()
+```
+'hello'.startsWith('ello', 1)
+//true
+'hello'.endsWith('hell', 4)
+//true
+'hello'.includes('ell', 1)
+//true
+'hello'.includes('ell', 2)
+//false
+```
+**What problem does it solve?**
 
-  The repeat() method repeats strings.
-  Only allows for integers and non negative numbers
-  3.5 will be converted to 3
+Useful when looking for words or expressions.
 
-  **How do we use it?**
-  ````
-  'doo '.repeat(3)
-  //'doo doo doo '
-  ````
-  **What problem does it solve?**
+ES5:
 
-  Instead of writing a long code, you can now just write repeat(noOfCount).
+```
+'hello'.indexOf('ello') === 1;
+//true
+'hello'.indexOf('hell') === (4 - 'hell'.length);
+//true
+'hello'.indexOf('ell') !== -1;
+//true
+'hello'.indexOf('ell', 1) !== -1;
+//true
+'hello'.indexOf('ell', 2) !== -1;
+//false
+```
 
-  ES5:
-  ```
-  Array((4 * depth) + 1).join(" ");
-  Array(3 + 1).join("foo");
-  ```
+### 2) New String API: String.prototype.repeat()
 
-  ### 3) New Array APIs: The Array.from()
+The repeat() method repeats strings.
+Only allows for integers and non negative numbers
+3.5 will be converted to 3
 
-  This new method creates a new Array instance from an array-like or iterable object.
+**How do we use it?**
 
-  **How do we use it?**
-  ```
-  Array.from("foo");
-  // ["f", "o", "o"]
-  ```
-  **What problem does it solve?**
+````
+'doo '.repeat(3)
+//'doo doo doo '
+````
 
-  Loop will not be required.
-  Able to create new array from objects that contains arrays.
+**What problem does it solve?**
 
-  ES5:
-  ```
-  function cast ()
-    return Array.prototype.slice.call(arguments)
-  }
-  cast('a', 'b')
-  // <- ['a', 'b']
-  ```
+Instead of writing a long code, you can now just write repeat(noOfCount).
 
-  ### 4) New Array APIs: Array.prototype.fill()
+ES5:
 
-  Convenient utility method to fill all places in an Array with the provided value. Note that array holes will be filled as well.
+```
+Array((4 * depth) + 1).join(" ");
+Array(3 + 1).join("foo");
+```
 
-  **How do we use it?**
-  ```
-  ['a', 'b', 'c'].fill(0)
-  // <- [0, 0, 0]
-  new Array(3).fill(0)
-  // <- [0, 0, 0]
-  ```
-  You could also determine a start index and an end index in the second and third parameters respectively.
-  ```
-  ['a', 'b', 'c',,,].fill(0, 2)
-  // <- ['a', 'b', 0, 0, 0]
-  new Array(5).fill(0, 0, 3)
-  // <- [0, 0, 0, undefined x 2]
-  ```
-  **What problem does it solve?**
+### 3) New Array APIs: The Array.from()
 
-  Easily fill items in array without having to loop through or find their position
+This new method creates a new Array instance from an array-like or iterable object.
 
-  ### 5) New Array APIs: Array.prototype.find()
-  The find() method returns a value of the first element in the array that satisfies the provided testing function.
-  **How do we use it?**
-  ```
-  [ 1, 3, 4, 2 ].find(x => x > 3)
-  // 4
-  ```
-  **What problem does it solve?**
+**How do we use it?**
+```
+Array.from("foo");
+// ["f", "o", "o"]
+```
+**What problem does it solve?**
 
-  Easily fill items in array without having to loop through or create a function.
+Loop will not be required.
+Able to create new array from objects that contains arrays.
 
-  ES5:
-  ```
-  [ 1, 3, 4, 2 ].filter(function (x) { return x > 3; })[0];
-  // 4
-  ```
+ES5:
 
-   ## Object API ES5 vs ES6
+```
+function cast ()
+return Array.prototype.slice.call(arguments)
+}
+cast('a', 'b')
+// <- ['a', 'b']
+```
 
-   #### What is the feature??
+### 4) New Array APIs: Array.prototype.fill()
 
-   ## object.assign()
-   object project assignment supports both strings and symbols as keys.For merging objects or cloning them.
-   New in es6 = { x, y } is an abbreviation for { x: x, y: y }.
+Convenient utility method to fill all places in an Array with the provided value. Note that array holes will be filled as well.
 
-   ## How do we use it?
+**How do we use it?**
 
-   ## Show an example ES5 code vs ES6 code?
+```
+['a', 'b', 'c'].fill(0)
+// <- [0, 0, 0]
+new Array(3).fill(0)
+// <- [0, 0, 0]
+```
 
-   ## Merging objects
+You could also determine a start index and an end index in the second and third parameters respectively.
 
-   #### ES5
+```
+['a', 'b', 'c',,,].fill(0, 2)
+// <- ['a', 'b', 0, 0, 0]
+new Array(5).fill(0, 0, 3)
+// <- [0, 0, 0, undefined x 2]
+```
 
-  ````
-  var dst  = { quux: 0 };
-  var src1 = { foo: 1, bar: 2 };
-  var src2 = { foo: 3, baz: 4 };
-  Object.keys(src1).forEach(function(k) {
-      dst[k] = src1[k];
-  });
-  Object.keys(src2).forEach(function(k) {
-      dst[k] = src2[k];
-  });
-  dst.quux === 0;
-  dst.foo  === 3;
-  dst.bar  === 2;
-  dst.baz  === 4;
-  ````
+**What problem does it solve?**
 
-   #### ES6
+Easily fill items in array without having to loop through or find their position
 
-  ````
-  var dst  = { quux: 0 }
-  var src1 = { foo: 1, bar: 2 }
-  var src2 = { foo: 3, baz: 4 }
-  Object.assign(dst, src1, src2)
-  dst.quux === 0
-  dst.foo  === 3
-  dst.bar  === 2
-  dst.baz  === 4
-  ````
+### 5) New Array APIs: Array.prototype.find()
 
-  ## adding method to an object
+The find() method returns a value of the first element in the array that satisfies the provided testing function.
 
-  #### ES5
+**How do we use it?**
 
-  ````
-  MyClass.prototype.foo = function (arg1, arg2) {
+```
+[ 1, 3, 4, 2 ].find(x => x > 3)
+// 4
+```
+**What problem does it solve?**
+
+Easily fill items in array without having to loop through or create a function.
+
+ES5:
+
+```
+[ 1, 3, 4, 2 ].filter(function (x) { return x > 3; })[0];
+// 4
+```
+
+## Object API ES5 vs ES6
+
+#### What is the feature??
+
+## object.assign()
+
+object project assignment supports both strings and symbols as keys.For merging objects or cloning them.
+New in es6 = { x, y } is an abbreviation for { x: x, y: y }.
+
+## How do we use it?
+
+## Show an example ES5 code vs ES6 code?
+
+## Merging objects
+
+#### ES5
+
+````
+var dst  = { quux: 0 };
+var src1 = { foo: 1, bar: 2 };
+var src2 = { foo: 3, baz: 4 };
+Object.keys(src1).forEach(function(k) {
+  dst[k] = src1[k];
+});
+Object.keys(src2).forEach(function(k) {
+  dst[k] = src2[k];
+});
+dst.quux === 0;
+dst.foo  === 3;
+dst.bar  === 2;
+dst.baz  === 4;
+````
+
+#### ES6
+
+````
+var dst  = { quux: 0 }
+var src1 = { foo: 1, bar: 2 }
+var src2 = { foo: 3, baz: 4 }
+Object.assign(dst, src1, src2)
+dst.quux === 0
+dst.foo  === 3
+dst.bar  === 2
+dst.baz  === 4
+````
+
+## adding method to an object
+
+#### ES5
+
+````
+MyClass.prototype.foo = function (arg1, arg2) {
+      ...
+  };
+````
+
+#### ES6
+
+````
+Object.assign(MyClass.prototype, {
+      foo(arg1, arg2) {
           ...
-      };
-  ````
+      }
+  });
+````
 
-   #### ES6
+## cloning an object
 
-  ````
-  Object.assign(MyClass.prototype, {
-          foo(arg1, arg2) {
-              ...
-          }
-      });
-  ````
+#### ES5
 
-   ## cloning an object
+````
+var copy = Object.assign({ __proto__: obj.__proto__ }, obj);
+````
 
-   #### ES5
+#### ES6
 
-  ````
-  var copy = Object.assign({ __proto__: obj.__proto__ }, obj);
-  ````
+````
+var copy = Object.assign({}, obj);
+````
 
-   #### ES6
-
-  ````
-  var copy = Object.assign({}, obj);
-  ````
-
-  useful link]http://www.2ality.com/2014/01/object-assign.html
+[useful link]http://www.2ality.com/2014/01/object-assign.html
 
 # Acknowledgements
 
