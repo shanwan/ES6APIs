@@ -97,9 +97,10 @@ Examples:
     g)   Math.hypot(...values)
         Computes the square root of the sum of squares of its arguments.
 
+
   ## Notable String and Array APIs in ES6
 
-  ** 1) New String APIs - String.prototype.startsWith(), String.prototype.endsWith(), String.prototype.includes()**
+  ### 1) New String APIs - String.prototype.startsWith(), String.prototype.endsWith(), String.prototype.includes()
 
   Three new methods check whether a string exists within another string.
 
@@ -141,7 +142,7 @@ Examples:
   //false
   ```
 
-  **2) New String API: String.prototype.repeat()**
+  ### 2) New String API: String.prototype.repeat()
 
   The repeat() method repeats strings.
   Only allows for integers and non negative numbers
@@ -162,7 +163,7 @@ Examples:
   Array(3 + 1).join("foo");
   ```
 
-  **3) New Array APIs: The Array.from()**
+  ### 3) New Array APIs: The Array.from()
 
   This new method creates a new Array instance from an array-like or iterable object.
 
@@ -185,7 +186,7 @@ Examples:
   // <- ['a', 'b']
   ```
 
-  **4) New Array APIs: Array.prototype.fill()**
+  ### 4) New Array APIs: Array.prototype.fill()
 
   Convenient utility method to fill all places in an Array with the provided value. Note that array holes will be filled as well.
 
@@ -207,7 +208,7 @@ Examples:
 
   Easily fill items in array without having to loop through or find their position
 
-  **5) New Array APIs: Array.prototype.find()**
+  ### 5) New Array APIs: Array.prototype.find()
   The find() method returns a value of the first element in the array that satisfies the provided testing function.
   **How do we use it?**
   ```
@@ -223,17 +224,23 @@ Examples:
   [ 1, 3, 4, 2 ].filter(function (x) { return x > 3; })[0];
   // 4
   ```
-  ===
 
-  ## Object API ES5 vs ES6
+   ## Object API ES5 vs ES6
+
    #### What is the feature??
+
    ## object.assign()
    object project assignment supports both strings and symbols as keys.For merging objects or cloning them.
    New in es6 = { x, y } is an abbreviation for { x: x, y: y }.
+
    ## How do we use it?
+
    ## Show an example ES5 code vs ES6 code?
+
    ## Merging objects
+
    #### ES5
+
   ````
   var dst  = { quux: 0 };
   var src1 = { foo: 1, bar: 2 };
@@ -249,7 +256,9 @@ Examples:
   dst.bar  === 2;
   dst.baz  === 4;
   ````
+
    #### ES6
+
   ````
   var dst  = { quux: 0 }
   var src1 = { foo: 1, bar: 2 }
@@ -260,14 +269,19 @@ Examples:
   dst.bar  === 2
   dst.baz  === 4
   ````
+
   ## adding method to an object
+
   #### ES5
+
   ````
   MyClass.prototype.foo = function (arg1, arg2) {
           ...
       };
   ````
+
    #### ES6
+
   ````
   Object.assign(MyClass.prototype, {
           foo(arg1, arg2) {
@@ -275,16 +289,22 @@ Examples:
           }
       });
   ````
-  ## cloning an object
+
+   ## cloning an object
+
    #### ES5
+
   ````
   var copy = Object.assign({ __proto__: obj.__proto__ }, obj);
   ````
+
    #### ES6
+
   ````
   var copy = Object.assign({}, obj);
   ````
-  [useful link]http://www.2ality.com/2014/01/object-assign.html
+
+  useful link]http://www.2ality.com/2014/01/object-assign.html
 
 # Acknowledgements
 
