@@ -96,13 +96,12 @@ Examples:
         Computes the inverse hyperbolic tangent of x.
     g)   Math.hypot(...values)
         Computes the square root of the sum of squares of its arguments.
-  ===
 
   ## Notable String and Array APIs in ES6
-  ### What is the feature?
-  **New String APIs - String.prototype.startsWith(), String.prototype.endsWith(), String.prototype.includes()**
 
-  Three new methods check whether a string exists within another string
+  ** 1) New String APIs - String.prototype.startsWith(), String.prototype.endsWith(), String.prototype.includes()**
+
+  Three new methods check whether a string exists within another string.
 
   **How do we use it?**
   `````
@@ -141,9 +140,8 @@ Examples:
   'hello'.indexOf('ell', 2) !== -1;
   //false
   ```
-  ===
-  ### What is the feature?
-  **New String API: String.prototype.repeat()**
+
+  **2) New String API: String.prototype.repeat()**
 
   The repeat() method repeats strings.
   Only allows for integers and non negative numbers
@@ -163,9 +161,8 @@ Examples:
   Array((4 * depth) + 1).join(" ");
   Array(3 + 1).join("foo");
   ```
-  ===
-  ### What is the feature?
-  **New Array APIs: The Array.from()**
+
+  **3) New Array APIs: The Array.from()**
 
   This new method creates a new Array instance from an array-like or iterable object.
 
@@ -187,9 +184,8 @@ Examples:
   cast('a', 'b')
   // <- ['a', 'b']
   ```
-  ===
-  ### What is the feature?
-  **New Array APIs: Array.prototype.fill()**
+
+  **4) New Array APIs: Array.prototype.fill()**
 
   Convenient utility method to fill all places in an Array with the provided value. Note that array holes will be filled as well.
 
@@ -210,9 +206,8 @@ Examples:
   **What problem does it solve?**
 
   Easily fill items in array without having to loop through or find their position
-  ===
-  ### What is the feature?
-  **New Array APIs: Array.prototype.find()**
+
+  **5) New Array APIs: Array.prototype.find()**
   The find() method returns a value of the first element in the array that satisfies the provided testing function.
   **How do we use it?**
   ```
